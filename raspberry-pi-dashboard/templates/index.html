@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IoT Device Health Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1>🔷 IoT Device Health & Security Dashboard</h1>
+                <p class="subtitle">Real-time ESP32/NodeMCU Monitoring</p>
+            </div>
+            <div class="last-updated">
+                <small>Last Updated: <span id="timestamp">--:--:--</span></small>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Status Card -->
+            <section class="status-section">
+                <div class="status-card" id="status-card">
+                    <div class="status-indicator" id="status-indicator">●</div>
+                    <div class="status-text">
+                        <h2>Device Status</h2>
+                        <p class="status-value" id="status-value">Loading...</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Device Information Grid -->
+            <section class="info-grid">
+                <!-- Device ID Card -->
+                <div class="info-card">
+                    <div class="card-icon">🆔</div>
+                    <h3>Device ID</h3>
+                    <p class="card-value" id="device-id">--</p>
+                    <p class="card-label">Unique Identifier</p>
+                </div>
+
+                <!-- Device Name Card -->
+                <div class="info-card">
+                    <div class="card-icon">📱</div>
+                    <h3>Device Name</h3>
+                    <p class="card-value" id="device-name">--</p>
+                    <p class="card-label">Friendly Name</p>
+                </div>
+
+                <!-- IP Address Card -->
+                <div class="info-card">
+                    <div class="card-icon">🌐</div>
+                    <h3>IP Address</h3>
+                    <p class="card-value" id="ip-address">--</p>
+                    <p class="card-label">Local Network</p>
+                </div>
+
+                <!-- Wi-Fi Signal Card -->
+                <div class="info-card">
+                    <div class="card-icon">📡</div>
+                    <h3>Wi-Fi Signal</h3>
+                    <p class="card-value" id="wifi-rssi">--</p>
+                    <p class="card-label" id="wifi-label">Signal Quality</p>
+                </div>
+
+                <!-- Uptime Card -->
+                <div class="info-card">
+                    <div class="card-icon">⏱️</div>
+                    <h3>Uptime</h3>
+                    <p class="card-value" id="uptime">--</p>
+                    <p class="card-label">Time Running</p>
+                </div>
+
+                <!-- Free Memory Card -->
+                <div class="info-card">
+                    <div class="card-icon">💾</div>
+                    <h3>Free Memory</h3>
+                    <p class="card-value" id="free-memory">--</p>
+                    <p class="card-label">Available RAM</p>
+                </div>
+
+                <!-- Firmware Version Card -->
+                <div class="info-card">
+                    <div class="card-icon">📦</div>
+                    <h3>Firmware</h3>
+                    <p class="card-value" id="firmware-version">--</p>
+                    <p class="card-label">Version</p>
+                </div>
+
+                <!-- Last Seen Card -->
+                <div class="info-card">
+                    <div class="card-icon">👁️</div>
+                    <h3>Last Seen</h3>
+                    <p class="card-value" id="last-seen">--</p>
+                    <p class="card-label">Seconds Ago</p>
+                </div>
+            </section>
+
+            <!-- Security Section -->
+            <section class="security-section">
+                <h2>🔒 Security Status</h2>
+                <div class="security-grid">
+                    <div class="security-item">
+                        <span class="security-label">API Key Protection:</span>
+                        <span class="security-status enabled">✓ Enabled</span>
+                    </div>
+                    <div class="security-item">
+                        <span class="security-label">Authentication:</span>
+                        <span class="security-status enabled">✓ X-API-Key Header</span>
+                    </div>
+                    <div class="security-item">
+                        <span class="security-label">Last Valid Update:</span>
+                        <span class="security-status" id="last-valid-update">Just now</span>
+                    </div>
+                    <div class="security-item">
+                        <span class="security-label">Protocol:</span>
+                        <span class="security-status">HTTP (Local Network)</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>IoT Device Health & Security Dashboard</p>
+            <p>By <a href="https://github.com/SeninduP" target="_blank">Senindu Pathirana</a></p>
+            <p><a href="https://github.com/SeninduP/iot-device-health-dashboard" target="_blank">View on GitHub</a></p>
+            <p class="version">v1.0.0</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
